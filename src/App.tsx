@@ -5,6 +5,7 @@ import { PAGE_CONFIG } from "./components/config/PageConfig";
 import { useEffect } from "react";
 import { setStorageData } from "./services/storages";
 import { LOCAL_STORAGE } from "./services/constant";
+import RedirectHome from "./components/config/RedirectHome";
 
 const App = () => {
   const { apiKey, setApiKey } = useGlobalContext();
@@ -28,6 +29,7 @@ const App = () => {
       <Routes>
         {apiKey ? (
           <>
+            <Route path="/" element={<RedirectHome />} />
             {PAGE_CONFIG_FILTERED.map(({ path, element }: any) => (
               <Route key={path} path={path} element={element} />
             ))}
