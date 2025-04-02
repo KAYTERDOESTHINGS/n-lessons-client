@@ -55,7 +55,7 @@ const FileModal = ({ file, onClose }: any) => {
             <XIcon size={24} />
           </button>
         </div>
-        <div className="bg-gray-800 rounded-lg p-2 min-w-[70vw] min-h-[80vh] flex justify-center items-center">
+        <div className="bg-gray-800 rounded-lg p-2 min-w-[70vw] min-h-[70vh] flex justify-center items-center">
           {content}
         </div>
       </div>
