@@ -120,9 +120,9 @@ const Lesson = () => {
             searchBoxes={
               <>
                 <InputBox
-                  value={query.name}
+                  value={query.title}
                   onChangeText={(value: any) =>
-                    handleSubmitQuery({ ...query, name: value })
+                    handleSubmitQuery({ ...query, title: value })
                   }
                   placeholder="Tiêu đề..."
                 />
