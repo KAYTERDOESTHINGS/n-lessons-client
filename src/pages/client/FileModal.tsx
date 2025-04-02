@@ -17,7 +17,7 @@ const FileModal = ({ file, onClose }: any) => {
         <img
           src={fileUrl}
           alt={file.name}
-          className="w-full h-[80vh] object-contain rounded-lg"
+          className="w-full h-[70vh] object-contain rounded-lg"
         />
       </Zoom>
     );
@@ -35,7 +35,7 @@ const FileModal = ({ file, onClose }: any) => {
     content = (
       <iframe
         src={fileUrl}
-        className="w-full h-[80vh] rounded-lg"
+        className="w-full h-[70vh] rounded-lg"
         title={file.name}
       />
     );
