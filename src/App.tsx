@@ -3,7 +3,7 @@ import NotFound from "./pages/NotFound";
 import { useGlobalContext } from "./components/config/GlobalProvider";
 import { PAGE_CONFIG } from "./components/config/PageConfig";
 import RedirectHome from "./components/config/RedirectHome";
-import LessonClient from "./pages/LessonClient";
+import LessonClient from "./pages/client/LessonClient";
 
 const App = () => {
   const { apiKey } = useGlobalContext();

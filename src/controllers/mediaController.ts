@@ -34,7 +34,7 @@ export const mediaController = (fetchApi: any) => {
     });
   };
 
-  const downloadBackup = (apiKey: any) => {
+  const downloadBackup = () => {
     return fetchApi({
       apiUrl: API_CONFIG.API_URL,
       endpoint: "/v1/media/download-backup",

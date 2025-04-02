@@ -1,7 +1,7 @@
 import * as CryptoJS from "crypto-js";
 import { v4 as uuidv4 } from "uuid";
 import forge from "node-forge";
-import { API_CONFIG } from "./constant";
+import { API_CONFIG, MIME_TYPES } from "./constant";
 
 const extractPrivateKey = (keyString: string): string => {
   const beginMarker = "-----BEGIN PRIVATE KEY-----";
@@ -360,6 +360,19 @@ const truncateToDDMMYYYY = (dateString: string): string => {
   }
 };
 
+const getMimeType = (fileName: string) => {
+  const extension = `.${fileName.split(".").pop()?.toLowerCase() || ""}`;
+  return (MIME_TYPES as any)[extension] || "application/octet-stream";
+};
+
+const parseDocuments = (documentString: string) => {
+  try {
+    return JSON.parse(documentString);
+  } catch (error) {
+    return [];
+  }
+};
+
 export {
   encrypt,
   decrypt,
@@ -382,4 +395,6 @@ export {
   encryptAES,
   decryptAES,
   decryptData,
+  getMimeType,
+  parseDocuments,
 };

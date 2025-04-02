@@ -1,18 +1,18 @@
 import { useParams } from "react-router-dom";
-import useApi from "../../hooks/useApi";
-import { BASIC_MESSAGES, BUTTON_TEXT, TOAST } from "../../services/constant";
-import useForm from "../../hooks/useForm";
+import { useGlobalContext } from "../../components/config/GlobalProvider";
+import useQueryState from "../../hooks/useQueryState";
 import { PAGE_CONFIG } from "../../components/config/PageConfig";
+import useApi from "../../hooks/useApi";
+import { useEffect, useState } from "react";
+import useForm from "../../hooks/useForm";
+import { BASIC_MESSAGES, BUTTON_TEXT, TOAST } from "../../services/constant";
 import Sidebar from "../../components/page/Sidebar";
+import { LoadingDialog } from "../../components/page/Dialog";
 import { ActionSection, FormCard } from "../../components/form/FormCard";
 import { InputField, TextAreaField } from "../../components/form/InputField";
 import { SelectFieldLazy } from "../../components/form/SelectField";
-import { CancelButton, SubmitButton } from "../../components/form/Button";
-import { LoadingDialog } from "../../components/page/Dialog";
-import { useEffect, useState } from "react";
-import useQueryState from "../../hooks/useQueryState";
-import { useGlobalContext } from "../../components/config/GlobalProvider";
 import DocumentsField from "../../components/form/DocumentsField";
+import { CancelButton, SubmitButton } from "../../components/form/Button";
 
 const UpdateLesson = () => {
   const { id } = useParams();
@@ -83,7 +83,7 @@ const UpdateLesson = () => {
     <Sidebar
       breadcrumbs={[
         {
-          label: `${fetchData?.name}`,
+          label: `${fetchData?.title}`,
           onClick: handleNavigateBack,
         },
         {

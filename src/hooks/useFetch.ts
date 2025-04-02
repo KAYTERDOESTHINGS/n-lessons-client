@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
-import { BASIC_MESSAGES, METHOD } from "../services/constant";
+import { BASIC_MESSAGES, METHOD, TOAST } from "../services/constant";
 import { removeSessionCache } from "../services/storages";
+import { useGlobalContext } from "../components/config/GlobalProvider";
 
 interface FetchOptions {
   apiUrl: string;
@@ -11,6 +12,7 @@ interface FetchOptions {
 }
 
 const useFetch = () => {
+  const { setToast } = useGlobalContext();
   const [loading, setLoading] = useState(false);
 
   const handleFetch = useCallback(async (options: FetchOptions) => {
